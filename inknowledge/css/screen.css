@@ -1,0 +1,15 @@
+body{background:url(img/bg.gif) repeat;color:#313131;font-family:Georgia,sans-serif;font-size:15px;}
+#block{width:720px;padding:60px 6px 10px 0;margin:0 auto;}
+#block h3{background:url(img/h3.png) no-repeat center;color:#dd3c04;font-size:13px;font-weight:normal;text-align:center;text-transform:uppercase;margin-bottom:17px;}
+#block h2{color:#003366;font-size:18px;font-weight:normal;text-align:center;text-transform:uppercase;margin-bottom:17px; letter-spacing:2px;}
+#block .logo{padding:10px 6px 10px 0;margin:0 auto;}
+#block .photo{background:url(img/photo-bg.png) no-repeat center;margin-right:6px;position:relative;float:left;}
+#block .photo img{max-width:115px;max-height:115px;overflow:hidden;position:absolute;}
+#block .photo img.photo-bg{z-index:1;}
+#block .photo img.photo{left:0;}
+#block p.text{font-style:italic;line-height:24px;padding-left:19px;margin-left:121px;position:relative;overflow:hidden;text-align:justify;}
+#block p.text span {text-indent;}
+#block p.text span.laquo{background:url(img/leftquo.png) no-repeat;width:14px;height:11px;position:absolute;left:0;top:4px;display:block;}
+#block p.text span.raquo{background:url(img/rightquo.png) no-repeat right 4px;width:13px;height:15px;padding-left:4px;display:inline-block;}
+#block .details{text-align:right;float:right;}
+#block .details p{color:#003366;font-size:12px;line-height:15px;margin-top:6px;}

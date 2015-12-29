@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+# UPLOAD COLLEGE LIST AUTOMATOR
+# Usage :
+#   ruby upload_college_list.rb <input_file_path.csv> <output_file_path.html>
+#   <input_file_path.csv> # input file must be a CSV with first column with heading 'Serial #' and 'College Name'
+#   <output_file_path.html> # must be an html file
 require 'csv'
 
 

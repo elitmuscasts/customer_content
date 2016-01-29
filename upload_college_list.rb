@@ -36,7 +36,7 @@ require 'csv'
 		  csv_rows.each do |row|
             number = row['Serial #']
             college_name = row['College Name']
-            string = "<tr><td>#{number}</td><td>#{college_name}</td></tr>"
+            string = "<tr><td>#{number}</td><td>#{college_name}</td></tr>\n"
             f.write (string)
 		  end
           

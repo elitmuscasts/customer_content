@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
+# UPLOAD COLLEGE LIST AUTOMATOR
+# Usage :
+#   ruby upload_college_list.rb <input_file_path.csv> <output_file_path.html>
+#   <input_file_path.csv> # input file must be a CSV with first column with heading 'Serial #' and 'College Name'
+#   <output_file_path.html> # must be an html file
 require 'csv'
 
 
@@ -31,7 +36,7 @@ require 'csv'
 		  csv_rows.each do |row|
             number = row['Serial #']
             college_name = row['College Name']
-            string = "<tr><td>#{number}</td><td>#{college_name}</td></tr>"
+            string = "<tr><td>#{number}</td><td>#{college_name}</td></tr>\n"
             f.write (string)
 		  end
           

@@ -46,8 +46,9 @@ require 'csv'
           # adding the colleges one by one
       idx = 0
 		  csv_rows.each do |row|
-            college_name = row['College Name']
-            string = "<tr id='s_no_#{idx}'><td>#{idx+1}</td><td>#{college_name}</td></tr>\n"
+            college_name = row['Institute']
+            location = "#{row['Location']}, #{row['State']}"
+            string = "<tr id='s_no_#{idx}'><td>#{idx+1}</td><td>#{college_name}</td><td>#{location}</td></tr>\n"
             f.write (string)
             idx = idx + 1
 		  end

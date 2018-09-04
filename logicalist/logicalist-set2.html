@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1"/>
+      <div class="col-md-10">
+        <br/>
+        <div id="custom-search-input">
+         <div class="input-group col-md-12">
+           <input type="text" id="search-input" class="form-control input-md" placeholder="search college name..." />
+           <span class="input-group-btn">
+             <button class="btn btn-info btn-md" type="button">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+      <br/>
+      <div class="table-responsive">
+        <table id="college-list" class="table table-striped table-hover table-condensed table-bordered"><tr id='s_no_0'><td>1</td><td>Andhra University college of engineering</td><td> Andhra Pradesh</td></tr>
+          <tr id='s_no_1'><td>2</td><td>Bangalore Institute Of Technology</td><td> Bangalore</td></tr>
+          <tr id='s_no_2'><td>3</td><td>Birla Institute of Technology</td><td> (Noida Nainital & Jaipur Campus)</td></tr>
+          <tr id='s_no_3'><td>4</td><td>BMS College Of Engineering</td><td> Karnataka</td></tr>
+          <tr id='s_no_4'><td>5</td><td>BNM Institute of Technology</td><td> Karnataka</td></tr>
+          <tr id='s_no_5'><td>6</td><td>College Of Engineering</td><td> Guindy </td></tr>
+          <tr id='s_no_6'><td>7</td><td>College of Engineering</td><td> Roorkee</td></tr>
+          <tr id='s_no_7'><td>8</td><td>College of Engineering</td><td> Pune</td></tr>
+          <tr id='s_no_8'><td>9</td><td>DAIICT</td><td> Gandhinagar</td></tr>
+          <tr id='s_no_9'><td>10</td><td>Dayanand Sagar college of Engineering</td><td> Bangalore </td></tr>
+          <tr id='s_no_10'><td>11</td><td>Indian Institute of Information Technology</td><td> Allahabad</td></tr>
+          <tr id='s_no_11'><td>12</td><td>International Institute of Information Technology</td><td> Bangalore</td></tr>
+          <tr id='s_no_12'><td>13</td><td>JNTU College of Engg</td><td> Hyderabad</td></tr>
+          <tr id='s_no_13'><td>14</td><td>Jadavpur Engineering College</td><td> West Bengal</td></tr>
+          <tr id='s_no_14'><td>15</td><td>Karunya Institute of Science & Technology</td><td> Coimbatore</td></tr>
+          <tr id='s_no_15'><td>16</td><td>KIIT University</td><td>Bhubaneswar</td></tr>
+          <tr id='s_no_16'><td>17</td><td>Kumaun Engineering College</td><td> Dwarahat</td></tr>
+          <tr id='s_no_17'><td>18</td><td>LNMIIT</td><td> Jaipur</td></tr>
+          <tr id='s_no_18'><td>19</td><td>Loyola Institute of Technology</td><td>Tamil Nadu</td></tr>
+          <tr id='s_no_19'><td>20</td><td>M S Ramaiah Institute Of Technology</td><td> Bangalore</td></tr>
+          <tr id='s_no_20'><td>21</td><td>Madras Institute of Technology</td><td> Tamil Nadu</td></tr>
+          <tr id='s_no_21'><td>22</td><td>MVJ College of Engineering</td><td> Karnataka</td></tr>
+          <tr id='s_no_22'><td>23</td><td>National Institute of Engineering</td><td> Mysore</td></tr>
+          <tr id='s_no_23'><td>24</td><td>Netaji Subash Institute of Technology</td><td> Delhi </td></tr>
+          <tr id='s_no_24'><td>25</td><td>PSG College of Technology</td><td> Coimbatore</td></tr>
+          <tr id='s_no_25'><td>26</td><td>PES Institute of Technology</td><td> Bangalore</td></tr>
+          <tr id='s_no_26'><td>27</td><td>RV College of Engineering</td><td> Bangalore</td></tr>
+          <tr id='s_no_27'><td>28</td><td>SASTRA University</td><td> Thanjavur</td></tr>
+          <tr id='s_no_28'><td>29</td><td>SDM Dharwad</td><td> Dharwad</td></tr>
+          <tr id='s_no_29'><td>30</td><td>Sri Jayachamarajendra College of Engineering</td><td> Mysore</td></tr>
+          <tr id='s_no_30'><td>31</td><td>SRM university</td><td></td></tr>
+          <tr id='s_no_31'><td>32</td><td>SSN college of Engineering</td><td></td></tr>
+          <tr id='s_no_32'><td>33</td><td>Veermata Jijabai Technological Institute</td><td> Mumbai</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-offset-1"/>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1"/>
+    <div class="col-md-8">
+      <a class="btn btn-danger btn-sm btn-block" role="button" onclick="javascript:window.close();">Close</a>
+    </div>
+    <div class="col-md-offset-1"/>
+  </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+        // search
+        var college_list = {};
+        $("#college-list tr").each(function(row, tr){
+          college_list[row] = {
+            "serial"        : $(tr).find("td:eq(0)").text()  // Serial No.
+            , "college_name": $(tr).find("td:eq(1)").text()  // College Name
+          }
+        });
+
+        console.log(college_list);
+
+        $(document).ready(function(){
+          $("#search-input").keyup(function(){
+                 // Retrieve the input field text and reset the count to zero
+                 var filter = $(this).val();
+                 for (var key in college_list) {
+                   if (college_list.hasOwnProperty(key)) {
+                    var val = college_list[key];
+                    if ((val.college_name.search(new RegExp(filter, "i")) < 0)){
+                     $("#s_no_"+(val.serial-1)).fadeOut();
+
+
+                   }
+                   else{
+                    $("#s_no_"+(val.serial-1)).show();
+                  }
+
+                }
+              }
+            })
+        });
+      </script>
+      </html>

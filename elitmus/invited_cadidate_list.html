@@ -1388,28 +1388,51 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    var str = '<nav id="navigation" aria-label="Page navigation example"> <ul class="pagination justify-content-center">';
+    var strUp   = '<nav id="navigationUp" aria-label="Page navigation example"> <ul class="pagination justify-content-center">';
+    var strDown = '<nav id="navigationDown" aria-label="Page navigation example"> <ul class="pagination justify-content-center">';
+
     var rowsShown = 100;
     var rowsTotal = $('#candidate-list tbody tr').length;
     var numPages = rowsTotal/rowsShown;
     for(i = 0;i < numPages;i++) {
         var pageNum = i + 1;
-        str += '<li class="page-item"><a class="page-link" href="#" rel="'+i+'">'+pageNum+'</a></li>';
+        strUp += '<li class="page-item"><a class="page-link" id="paginatio_markup_up_'+i+'" href="#" rel="'+i+'">'+pageNum+'</a></li>';
+        strDown += '<li class="page-item"><a class="page-link" id="paginatio_markup_down_'+i+'" href="#" rel="'+i+'">'+pageNum+'</a></li>';
     }
-    str += '</ul> </nav>'
-    $('#candidate-list').after(str);
+    strUp += '</ul> </nav>'
+    strDown += '</ul> </nav>'
+
+    $('#candidate-list').before(strUp);
+    $('#candidate-list').after(strDown);
 
     $('#candidate-list tbody tr').hide();
     $('#candidate-list tbody tr').slice(0, rowsShown).show();
-    $('#navigation li:first').addClass('active');
-    $('#navigation a').on('click', function(){
-        $('#navigation li').removeClass('active');
+    $('#navigationUp li:first').addClass('active');
+    $('#navigationDown li:first').addClass('active');
+
+    $('#navigationUp a').on('click', function(){
+        $('#navigationUp li').removeClass('active');
+        $('#navigationDown li').removeClass('active');
+        var_text = $(this).text()-1;
         $(this).parent().addClass('active');
+        $('#paginatio_markup_down_'+var_text).parent().addClass('active');
         var currPage = $(this).attr('rel');
         var startItem = currPage * rowsShown;
         var endItem = startItem + rowsShown;
-        console.log(startItem + " "+endItem);
         $('#candidate-list tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).css('display','table-row').css('opacity','1.0');
     });
+
+    $('#navigationDown a').on('click', function(){
+        $('#navigationUp li').removeClass('active');
+        $('#navigationDown li').removeClass('active');
+        var_text = $(this).text()-1;
+        $(this).parent().addClass('active');
+        $('#paginatio_markup_up_'+var_text).parent().addClass('active');
+        var currPage = $(this).attr('rel');
+        var startItem = currPage * rowsShown;
+        var endItem = startItem + rowsShown;
+        $('#candidate-list tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).css('display','table-row').css('opacity','1.0');
+    });
+
   });
 </script>
